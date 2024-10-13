@@ -74,7 +74,8 @@ func start(src string) string {
 
 	// Otherwise copy to a path with -temp suffix
 	if err := copyExe(src, addTempSuffixToPath(src)); err != nil {
-		panic(err)
+		log.Println("Copy error: ", err);
+		return "";
 	}
 	return ""
 }
